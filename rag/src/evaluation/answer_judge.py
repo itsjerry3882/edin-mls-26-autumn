@@ -225,7 +225,7 @@ class Judge:
                 last = e
                 if attempt + 1 < self.retries:
                     time.sleep(min(2 ** attempt, 4))
-        raise RuntimeError(f"judge request failed: {last}")
+        raise RuntimeError(f"judge request failed: {last}") from last
 
 
 def mean(xs):
